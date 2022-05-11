@@ -7,6 +7,7 @@ import (
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/klog/v2"
 	"k8s.io/kubernetes/pkg/scheduler/framework"
 )
 
@@ -32,8 +33,10 @@ func (m *Maintainer) Filter(ctx context.Context, state *framework.CycleState, po
 	// skip this filter if not enabled
 	en, ok := pod.Annotations[annotKeyEnabled]
 	if !ok || strings.ToLower(en) != "true" {
+		klog.V(4).InfoS("Filter: skip", "pod", pod.Name)
 		return nil
 	}
+	klog.V(4).InfoS("Filter: do", "pod", pod.Name, "nodeInfo", nodeInfo.Node().Name)
 	// validate the address
 	addr, ok := pod.Annotations[annotKeyAddr]
 	if !ok {
