@@ -1,0 +1,7 @@
+apiVersion: kubescheduler.config.k8s.io/v1beta2
+kind: KubeSchedulerConfiguration
+profiles:
+  - plugins:
+      filter:
+        enabled:
+          - name: Maintainer

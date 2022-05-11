@@ -1,0 +1,14 @@
+apiVersion: kubescheduler.config.k8s.io/v1beta2
+kind: KubeSchedulerConfiguration
+leaderElection:
+  leaderElect: false
+clientConnection:
+  kubeconfig: "/etc/kubernetes/scheduler.conf"
+profiles:
+  - schedulerName: toy-scheduler
+    plugins:
+      filter:
+        enabled:
+          - name: Maintainer
+healthzBindAddress: 0.0.0.0:10252 # use non-defalt port to avoid port conflict with default-scheduler
+metricsBindAddress: 0.0.0.0:10252 # use non-defalt port to avoid port conflict with default-scheduler
