@@ -24,7 +24,7 @@ const (
 	ErrReasonInvalidAddress     = "\"" + annotKeyAddr + "\" in Pod's Annotations didn't match RFC 5322 (e.g. \"John Smith <john@example.com>\")"
 )
 
-func (m *Maintainer) Name() string {
+func (*Maintainer) Name() string {
 	return Name
 }
 
