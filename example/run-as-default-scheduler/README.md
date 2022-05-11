@@ -1,6 +1,6 @@
 # Run the custom scheduler instead of the default scheduler
 
-## 1. Update `/etc/kubernetes/manifests/kube-scheduler.yaml`.
+## 1. Update `/etc/kubernetes/manifests/kube-scheduler.yaml`
 
 Example: `./kube-scheduler.yaml`
 
@@ -27,10 +27,10 @@ spec:
       name: kubeschedulerconfig
 ```
 
-## 2. Create `/etc/kubernetes/kube-scheduler-configuration.yaml`.
+## 2. Create `/etc/kubernetes/kube-scheduler-configuration.yaml`
 
 ```sh
 sudo cp ./kube-scheduler-configuration.yaml /etc/kubernetes/kube-scheduler-configuration.yaml
 ```
 
-## 3. Run Pods.
+## 3. Run Pods
