@@ -19,13 +19,9 @@ jobs:
           registry: ghcr.io
           username: ebiiim
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get the version
-        id: ver
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - uses: docker/build-push-action@v3
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: VERSION=${{ steps.ver.outputs.VERSION }}
