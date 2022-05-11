@@ -21,7 +21,7 @@ const (
 	annotKeyAddr                = "ebiiim.com/maintainer.address"
 	annotKeyEnabled             = "ebiiim.com/maintainer.enabled"
 	ErrReasonAnnotationNotFound = "\"" + annotKeyAddr + "\" didn't found in Pod's Annotations"
-	ErrReasonInvalidAddress     = "\"" + annotKeyEnabled + "\" in Pod's Annotations didn't match RFC 5322 (e.g. \"John Smith <john@example.com>\")"
+	ErrReasonInvalidAddress     = "\"" + annotKeyAddr + "\" in Pod's Annotations didn't match RFC 5322 (e.g. \"John Smith <john@example.com>\")"
 )
 
 func (m *Maintainer) Name() string {
