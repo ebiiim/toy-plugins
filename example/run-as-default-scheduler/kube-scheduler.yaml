@@ -18,6 +18,7 @@ spec:
         - --leader-elect=true
         - --port=0
         - --config=/etc/kubernetes/kube-scheduler-configuration.yaml
+        - --v=4
       image: ghcr.io/ebiiim/toy-scheduler:0.1.0
       imagePullPolicy: IfNotPresent
       livenessProbe:
